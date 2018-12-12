@@ -1,0 +1,21 @@
+{
+  "name": "@vesta/locale",
+  "version": "0.1.0",
+  "description": "Vesta boilerplate for creating new modules",
+  "license": "Apache-2.0",
+  "author": "hbtb <bishehsary@gmail.com>",
+  "contributors": [
+    "javadkh2 khalilian.javad@gmail.com"
+  ],
+  "dependencies": {},
+  "scripts": {
+    "start": "gulp",
+    "deploy": "gulp publish"
+  },
+  "devDependencies": {
+    "@vesta/devmaid": "^0.4.5",
+    "gulp": "^4.0.0",
+    "typescript": "^3.2.2"
+  }, 
+  "private": true
+}

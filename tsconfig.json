@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "jsx": "preserve",
+    "strictPropertyInitialization": false
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "vesta"
+  ]
+}
