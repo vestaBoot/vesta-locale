@@ -15,7 +15,7 @@ export class Dictionary {
         return this.vocabs[key.toLowerCase()];
     }
 
-    public translate = (key: string, ...placeholders: Array<any>): string => {
+    public translate = (key: string, ...placeholders: any[]): string => {
         if (!key) { return ""; }
         let tr = this.lookup(key);
         if (!tr) { return key; }

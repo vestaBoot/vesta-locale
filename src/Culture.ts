@@ -2,14 +2,24 @@ import { DateTime, IDateTime } from "./DateTime";
 import { Dictionary, IVocabs } from "./Dictionary";
 import { ILocale } from "./ILocale";
 
-export interface ICulture {
+interface ICultureItem {
     dateTime: IDateTime;
     dictionary: Dictionary;
     locale: ILocale;
 }
 
-export interface ICultureCollection {
-    [localeName: string]: ICulture;
+interface ICultureCollection {
+    [localeName: string]: ICultureItem;
+}
+
+export interface ICulture {
+    getCode: () => string;
+    getDateTime: (code?: string) => IDateTime;
+    getDateTimeInstance: (code?: string) => DateTime;
+    getDictionary: (code?: string) => Dictionary;
+    getLocale: (code?: string) => ILocale;
+    register: (locale: ILocale, vocabs: IVocabs, dateTime: IDateTime) => void;
+    setDefault: (locale: string) => void;
 }
 
 export class Culture {
