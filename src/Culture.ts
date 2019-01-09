@@ -1,6 +1,6 @@
 import { DateTime, IDateTime } from "./DateTime";
 import { Dictionary, IVocabs } from "./Dictionary";
-import { ILocale } from "./ILocale";
+import { ILocale } from "./Locale";
 
 interface ICultureItem {
     dateTime: IDateTime;
@@ -23,8 +23,6 @@ export interface ICulture {
 }
 
 export class Culture {
-    private static cultures: ICultureCollection = {};
-    private static defaultCode: string;
 
     public static getCode(): string {
         return Culture.defaultCode;
@@ -63,4 +61,7 @@ export class Culture {
     public static setDefault(locale: string) {
         Culture.defaultCode = locale;
     }
+
+    private static cultures: ICultureCollection = {};
+    private static defaultCode: string;
 }

@@ -1,8 +1,6 @@
-import { ILocale } from "./ILocale";
+import { ILocale } from "./Locale";
 
-export interface IDateTime {
-    new(): DateTime;
-}
+export type IDateTime = new () => DateTime;
 
 export abstract class DateTime {
     public locale: ILocale;
@@ -23,6 +21,8 @@ export abstract class DateTime {
     };
     protected leadingZeros = ["d", "m", "H", "h", "i", "s"];
 
+    public abstract isLeapYear(): boolean;
+
     public format(format: string) {
         let parsed = "";
         for (let i = 0, il = format.length; i < il; ++i) {
@@ -34,6 +34,13 @@ export abstract class DateTime {
     public abstract getDate(): number;
 
     public abstract getDay(): number;
+
+    public getDaysInMonth(): number {
+        const year = this.getFullYear();
+        const month = this.getMonth();
+        const offset = this.locale.leapMonth === month && this.isLeapYear() ? 1 : 0;
+        return this.locale.daysInMonth[month] + offset;
+    }
 
     public abstract getFullYear(): number;
 
@@ -66,7 +73,7 @@ export abstract class DateTime {
         const [dateStr, timeStr] = date.split(this.locale.dateTimeSep);
         if (!dateStr) { return false; }
         const dateParts = dateStr.split(this.locale.dateSep);
-        if (!dateParts || dateParts.length != 3) { return false; }
+        if (!dateParts || dateParts.length !== 3) { return false; }
         const year = +dateParts[0];
         // 0 <= month <= 11
         const month = +dateParts[1] - 1;

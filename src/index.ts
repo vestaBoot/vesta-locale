@@ -7,5 +7,5 @@ export { DateTime } from "./DateTime";
 import { IVocabs } from "./Dictionary";
 export type IVocabs = IVocabs;
 export { Dictionary } from "./Dictionary";
-import { ILocale } from "./ILocale";
+import { ILocale } from "./Locale";
 export type ILocale = ILocale;
