@@ -1,4 +1,4 @@
-const { Indexer, Packager } = require("@vesta/devmaid");
+const { genIndex, Packager } = require("@vesta/devmaid");
 const gulp = require("gulp")
 
 let pkgr = new Packager({
@@ -7,20 +7,10 @@ let pkgr = new Packager({
     targets: ["es6"],
     files: [".npmignore", "LICENSE", "README.md"],
     publish: "--access=public",
-    transform: {
-        package: (json, target) => {
-            delete json.private;
-            return false;
-        },
-        tsconfig: function(tsconfig, target, isProduction) {
-            tsconfig.compilerOptions.target = target;
-        }
-    }
 });
 
 function indexer() {
-    const indexer = new Indexer("src");
-    indexer.generate();
+    genIndex("src");
     return Promise.resolve();
 }
 

@@ -1,26 +1,25 @@
 {
-  "name": "@vesta/culture",
-  "version": "0.1.1",
-  "description": "Vesta culture",
-  "license": "Apache-2.0",
-  "author": "hbtb <bishehsary@gmail.com>",
-  "contributors": [
-    "javadkh2 khalilian.javad@gmail.com"
-  ],
-  "keywords": [
-    "locale",
-    "culture",
-    "DateTime"
-  ],
-  "dependencies": {},
-  "scripts": {
-    "start": "gulp",
-    "deploy": "gulp publish"
-  },
-  "devDependencies": {
-    "@vesta/devmaid": "^0.4.5",
-    "gulp": "^4.0.0",
-    "typescript": "^3.2.2"
-  },
-  "private": true
+    "name": "@vesta/culture",
+    "version": "0.1.2",
+    "description": "Vesta culture",
+    "license": "Apache-2.0",
+    "author": "hbtb <bishehsary@gmail.com>",
+    "contributors": [
+        "javadkh2 khalilian.javad@gmail.com"
+    ],
+    "keywords": [
+        "locale",
+        "culture",
+        "DateTime"
+    ],
+    "dependencies": {},
+    "scripts": {
+        "start": "gulp",
+        "deploy": "gulp publish"
+    },
+    "devDependencies": {
+        "@vesta/devmaid": "^0.4.9",
+        "gulp": "^4.0.2",
+        "typescript": "^3.7.5"
+    }
 }

@@ -1,11 +1,4 @@
-import { ICulture } from "./Culture";
-export type ICulture = ICulture;
-export { Culture } from "./Culture";
-import { IDateTime } from "./DateTime";
-export type IDateTime = IDateTime;
-export { DateTime } from "./DateTime";
-import { IVocabs } from "./Dictionary";
-export type IVocabs = IVocabs;
-export { Dictionary } from "./Dictionary";
-import { ILocale } from "./Locale";
-export type ILocale = ILocale;
+export * from "./Culture";
+export * from "./DateTime";
+export * from "./Dictionary";
+export * from "./Locale";
